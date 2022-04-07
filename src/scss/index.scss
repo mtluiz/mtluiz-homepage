@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "~bootstrap-icons/font/bootstrap-icons.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.screen{
+    top: 0;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f6e7;
+    z-index: -1;
+}
+
+
+.portfolio-menu{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+
+    nav{
+        display: flex;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.5rem;
+        gap: 10px;
+        margin-right: 10px;
+        align-items: center;
+        align-items: center;
+
+        
+        h4{
+            font-weight: 200;
+        }
+
+        .dots{
+            background-color: red;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            color: white;
+            font-size: 18px;
+            align-items: center;
+            cursor: pointer;
+            div{
+                width: 4px;
+                border-radius: 50%;
+                height: 4px;
+                margin: 2px;
+                background-color: white;
+            }
+        }
+    }
+}
+
+.portfolio-header {
+    display: flex;
+    align-items: center;
+    &__name {
+      position: absolute;
+      font-size: 40px;
+      bottom: 0;
+      &-main {
+        font-size: 60px;
+        font-family: 'Inconsolata';
+        font-weight: 100;
+        color: #ff5252;
+      }
+  
+      .other-letter {
+        color: #010101;
+        font-family: "Raleway", sans-serif;
+        font-weight: 500;
+        letter-spacing: 3px;
+      }
+  
+      .anim {
+        height: 90px;
+        overflow: hidden;
+        h1 {
+          display: inline-block;
+          position: relative;
+          white-space: nowrap;
+          top: 0px;
+          animation: move-titles 10s;
+          animation-iteration-count: infinite;
+          animation-delay: 6s;
+          line-height: 100px;
+        }
+      }
+    }
+  }
+  
+  
+  @keyframes move-titles {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: -100px;
+    }
+    50% {
+      top: -200px;
+    }
+    75% {
+      top: -300px;
+    }
+  }
