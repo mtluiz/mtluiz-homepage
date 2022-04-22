@@ -1,34 +1,7 @@
-import { useRef } from "react";
-import * as THREE from "three";
-import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import js from "../../assets/images/javascript.svg";
-
-function Box(props: JSX.IntrinsicElements["mesh"]) {
-  const ref = useRef<THREE.Mesh>(null!);
-  useFrame((state, delta) => (ref.current.rotation.x += 0.1));
-  return (
-    <mesh {...props} ref={ref}>
-      <icosahedronGeometry args={[1.5, 0]} />
-      <meshPhysicalMaterial
-        color="#000000"
-        ior={1.5}
-        envMapIntensity={1.5}
-        clearcoat={1}
-        clearcoatNormalScale={new THREE.Vector2(0.2)}
-        metalness={0.2}
-        thickness={2.5}
-        roughness={0.2}
-        transmission={0.9}
-        reflectivity={0.7}
-        clearcoatRoughness={0.1}
-        normalScale={new THREE.Vector2(0.3)}
-      />
-    </mesh>
-  );
-}
-
 function App() {
+
   return (
+    <>
     <div className="portfolio container">
       <header className="portfolio-header">
         <h3>matheus luiz</h3>
@@ -59,6 +32,10 @@ function App() {
         <p>SCROLL TO BEGIN YOUR JOURNEY   <i className="bi bi-arrow-right" /></p>
       </footer>
     </div>
+    <div className="container">
+      <h1>graças a deus é sexta feira em</h1>
+    </div>
+    </>
   );
 }
 

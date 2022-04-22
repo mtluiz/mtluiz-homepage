@@ -17,4 +17,7 @@ root.render(<React.StrictMode>
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals(console.log);
 
-
+window.addEventListener('wheel', (event)=>{
+  event.preventDefault();
+  window.scroll(window.scrollX + event.deltaY, 0)
+}, {passive: false});
