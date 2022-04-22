@@ -45,16 +45,18 @@ function App() {
       </header>
 
       <main className="portfolio-main">
-        <h1>FULL STACK</h1>
+        <h1>SOFTWARE ENGINEER</h1>
         <h1>WEB DEVELOPER</h1>
-        <h1>WANNABE</h1>
+        <h1>ETERNAL STUDENT</h1>
       </main>
 
-      <footer>
+      <footer className="portfolio-footer">
         <ul>
           <li>GITHUB</li>
           <li>LINKEDIN</li>
         </ul>
+
+        <p>SCROLL TO BEGIN YOUR JOURNEY   <i className="bi bi-arrow-right" /></p>
       </footer>
     </div>
   );
