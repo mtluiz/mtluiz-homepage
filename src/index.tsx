@@ -1,10 +1,8 @@
 import React from 'react';
-import App from './components/App/App';
-import reportWebVitals from './reportWebVitals';
 import { createRoot } from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 import './scss/index.scss';
-
-
 
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container)
@@ -12,12 +10,5 @@ root.render(<React.StrictMode>
   <App />
 </React.StrictMode>)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Web Vitals Log
 reportWebVitals(console.log);
-
-window.addEventListener('wheel', (event)=>{
-  event.preventDefault();
-  window.scroll(window.scrollX + event.deltaY, 0)
-}, {passive: false});
