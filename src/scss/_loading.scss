@@ -40,14 +40,13 @@
         display: flex;
         transform-style: preserve-3d;
         justify-content: space-between;
-        animation: animation 3s linear infinite;
+        animation: animation 8s linear infinite;
       }
     }
   }
 
 
   @keyframes animation{
-    0% {transform: translate(10%);}
-    50% {transform: translate(30%);}
-    100% {transform: translate(10%);}
+    from   { transform: translateX(60%); }
+    to { transform: translateX(-80%); }
   }

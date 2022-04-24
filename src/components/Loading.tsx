@@ -15,8 +15,8 @@ export default function Loading({ run, next }: ILoading) {
   }, [run]);
 
   function runAnimation() {
-    gsap.to(text.current, { scale: 10, duration: 1.8, ease: "power3"});
-    gsap.to(ball.current, { scale: 10, duration: 1.8, ease: "power3", onComplete: next });
+    gsap.to(ball.current, { scale: 10, duration: 2.2, ease: "power3", onComplete: next });
+    gsap.to(text.current, { scale: 10, duration: 2.2, ease: "power3"})
   }
 
   function teste(){
@@ -27,10 +27,6 @@ export default function Loading({ run, next }: ILoading) {
     <div className="loading">
       <div className="loading-container" ref={text}>
         <div className="loading-container_animation">
-          <h1>Loading...</h1>
-          <h1>Loading...</h1>
-          <h1>Loading...</h1>
-          <h1>Loading...</h1>
           <h1>Loading...</h1>
           <h1>Loading...</h1>
           <h1>Loading...</h1>
