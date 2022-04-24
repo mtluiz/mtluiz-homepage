@@ -1,14 +1,49 @@
-import gsap from "gsap"
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
-export default function Loading() {
+interface ILoading {
+  run: boolean;
+  next: any;
+}
+
+export default function Loading({ run, next }: ILoading) {
+  const ball = useRef(null);
+  const text = useRef(null);
+
+  useEffect(() => {
+    if (run) runAnimation();
+  }, [run]);
+
+  function runAnimation() {
+    gsap.to(text.current, { scale: 10, duration: 1.8, ease: "power3"});
+    gsap.to(ball.current, { scale: 10, duration: 1.8, ease: "power3", onComplete: next });
+  }
+
+  function teste(){
+    console.log('teste')
+  }
+
   return (
-    <div className='loading'>
+    <div className="loading">
+      <div className="loading-container" ref={text}>
+        <div className="loading-container_animation">
+          <h1>Loading...</h1>
+          <h1>Loading...</h1>
+          <h1>Loading...</h1>
+          <h1>Loading...</h1>
+          <h1>Loading...</h1>
+          <h1>Loading...</h1>
+          <h1>Loading...</h1>
+          <h1>Loading...</h1>
+          <h1>Loading...</h1>
+          <h1>Loading...</h1>
+          <h1>Loading...</h1>
+        </div>
+      </div>
 
-        <h1>Loading</h1>
+      <div className="ball" ref={ball}></div>
 
-        <div className="ball"></div>
-
-        <div className="noise"></div>
+      <div className="noise"></div>
     </div>
-  )
+  );
 }

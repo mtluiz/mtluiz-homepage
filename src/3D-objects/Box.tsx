@@ -8,6 +8,6 @@ function Box(props: JSX.IntrinsicElements["mesh"]) {
         <meshPhongMaterial color={0xffffff}></meshPhongMaterial>
       </mesh>
     );
-  }
+ }
 
 export default Box;
