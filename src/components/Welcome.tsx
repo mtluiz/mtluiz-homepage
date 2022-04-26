@@ -1,14 +1,24 @@
 import { Canvas } from "@react-three/fiber";
 import Box from "../3D-objects/Box";
 import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 function Welcome() {
+
+  const portfolio = useRef<HTMLDivElement>(null);
+  useEffect(()=> {
+    gsap.to(portfolio.current!.children, {opacity: 1, duration: 0.8, ease: "expo", stagger: 1})
+  }, [])
+
   return (
-    <div className="portfolio container">
+    <>
+    <div className="portfolio container" ref={portfolio}>
       <header className="portfolio-header">
         <h3>matheus luiz</h3>
 
-        <p>AVAILABLE FOR FREELANCE WORK 💻 AVAILABLE FOR FREELANCE WORK</p>
+        <div className="portfolio__merch">
+          <span>AVAILABLE FOR FREELANCE WORK 💻 AVAILABLE FOR FREELANCE WORK 💻 AVAILABLE FOR FREELANCE WORK 💻 AVAILABLE FOR FREELANCE WORK</span>
+        </div>
 
         <nav>
           <ul>
@@ -19,7 +29,7 @@ function Welcome() {
         </nav>
       </header>
 
-      <h1>teste</h1>
+      <span></span>
 
       <main className="portfolio-main">
         <h1>SOFTWARE ENGINEER</h1>
@@ -44,6 +54,8 @@ function Welcome() {
         </Canvas>
       </div>
     </div>
+    <div className="noise"></div>
+    </>
   );
 }
 

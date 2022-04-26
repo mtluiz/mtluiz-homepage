@@ -15,8 +15,9 @@ export default function Loading({ run, next }: ILoading) {
   }, [run]);
 
   function runAnimation() {
-    gsap.to(ball.current, { scale: 10, duration: 2.2, ease: "power3", onComplete: next });
+    gsap.to(ball.current, { scale: 10, duration: 2.2, ease: "power3"});
     gsap.to(text.current, { scale: 10, duration: 2.2, ease: "power3"})
+    gsap.to(text.current, { opacity: 0, duration: 1, ease: "power3", onComplete: next})
   }
 
   function teste(){

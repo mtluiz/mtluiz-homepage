@@ -5,6 +5,10 @@
   align-items: center;
   justify-content: space-between;
 
+  & > *{
+    opacity: 0;
+  }
+
   &-main {
     color: white;
     font-size: 5rem;
@@ -27,6 +31,35 @@
     z-index: 0;
     pointer-events: none;
   }
+  
+  &__merch {
+    font-size: 1.6rem;
+    font-family: "Inter";
+    font-weight: 300;
+    border: 1.2px solid #fff;
+    padding: 0.8rem;
+    border-radius: 100px;
+    position: absolute;
+    width: 50rem;
+    left: calc(50% - 25rem);
+  	overflow: hidden;
+    span{
+      display: flex;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      animation: animation2 8s linear infinite; 
+      @keyframes animation2{
+        from   { transform: translateX(-300%); }
+        to { transform: translateX(100%); }
+      }
+    
+    }
+    &:hover{
+      border-color: rgb(46, 143, 46);
+      cursor: pointer;
+      transition: 1s;
+    }
+  }
 
   &-header {
     height: 7rem;
@@ -44,14 +77,6 @@
       font-family: "Raleway";
     }
 
-    p {
-      font-size: 1.6rem;
-      font-family: "Inter";
-      font-weight: 300;
-      border: 1px solid #fff;
-      padding: 0.8rem;
-      border-radius: 100px;
-    }
 
     nav {
       ul {
@@ -61,7 +86,7 @@
           font-size: 1.6rem;
           font-family: "Raleway";
           margin-left: 3.5rem;
-          font-weight: 200;
+          font-weight: 300;
           cursor: pointer;
         }
       }
@@ -81,8 +106,9 @@
         font-size: 1.6rem;
         font-family: "Raleway";
         //margin-left: 3.5rem;
-        font-weight: 200;
+        font-weight: 300;
         cursor: pointer;
+        margin-left: 3.5rem;
       }
     }
 
@@ -90,7 +116,7 @@
       font-size: 1.6rem;
       font-family: "Raleway";
       //margin-left: 3.5rem;
-      font-weight: 200;
+      font-weight: 300;
       cursor: pointer;
     }
   }
