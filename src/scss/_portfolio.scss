@@ -5,12 +5,12 @@
   align-items: center;
   justify-content: space-between;
 
-  & > *{
+  & > * {
     opacity: 0;
   }
 
   &-main {
-    color: white;
+    color: $secondary;
     font-size: 5rem;
     line-height: 1.1;
     font-family: "Inter";
@@ -31,7 +31,7 @@
     z-index: 0;
     pointer-events: none;
   }
-  
+
   &__merch {
     font-size: 1.6rem;
     font-family: "Inter";
@@ -42,19 +42,22 @@
     position: absolute;
     width: 50rem;
     left: calc(50% - 25rem);
-  	overflow: hidden;
-    span{
+    overflow: hidden;
+    span {
       display: flex;
       flex-wrap: nowrap;
       white-space: nowrap;
-      animation: animation2 8s linear infinite; 
-      @keyframes animation2{
-        from   { transform: translateX(-300%); }
-        to { transform: translateX(100%); }
+      animation: animation2 8s linear infinite;
+      @keyframes animation2 {
+        from {
+          transform: translateX(-300%);
+        }
+        to {
+          transform: translateX(100%);
+        }
       }
-    
     }
-    &:hover{
+    &:hover {
       border-color: rgb(46, 143, 46);
       cursor: pointer;
       transition: 1s;
@@ -71,12 +74,12 @@
     align-items: center;
     padding: 0 4rem;
     position: fixed;
+    background-color: $primary;
 
     h3 {
       font-size: 2rem;
       font-family: "Raleway";
     }
-
 
     nav {
       ul {
@@ -94,7 +97,7 @@
   }
 
   &-footer {
-    color: white;
+    color: $secondary;
     height: 7rem;
     display: flex;
     width: 100%;
