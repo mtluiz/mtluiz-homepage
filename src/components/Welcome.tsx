@@ -32,9 +32,8 @@ function Welcome() {
       <span></span>
 
       <main className="portfolio-main">
-        <h1>SOFTWARE ENGINEER</h1>
-        <h1>WEB DEVELOPER</h1>
-        <h1>ETERNAL STUDENT</h1>
+        <h1>Greetings, I'm Matheus</h1>
+        <h1>Full Stack Developer</h1>
       </main>
 
       <footer className="portfolio-footer">
