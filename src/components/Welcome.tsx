@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import Box from "../3D-objects/Box";
+import Sphere from "../3D-objects/Sphere";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
@@ -34,6 +34,7 @@ function Welcome() {
       <main className="portfolio-main">
         <h1>Greetings, I'm Matheus</h1>
         <h1>Full Stack Developer</h1>
+        <h1>& Eternal Student</h1>
       </main>
 
       <footer className="portfolio-footer">
@@ -49,7 +50,7 @@ function Welcome() {
 
       <div className="portfolio-screen">
         <Canvas>
-          <Box />
+          <Sphere />
         </Canvas>
       </div>
     </div>

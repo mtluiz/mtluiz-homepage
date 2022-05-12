@@ -1,10 +1,13 @@
+import { useEffect, useState } from "react";
+
 import Welcome from "./components/Welcome";
 import Works from "./components/Works";
-import beginHorizontalScroll from "./utils/horizontal-scroll";
-import ASScroll from "@ashthornton/asscroll";
-
 import Loading from "./components/Loading";
-import { useEffect, useState } from "react";
+import Skills from "./components/Skills";
+import Contact from "./components/Contact";
+
+import beginHorizontalScroll from "./utils/horizontal-scroll";
+
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -13,6 +16,8 @@ function App() {
   function next() {
     setRender(true);
   }
+
+  beginHorizontalScroll()
 
   useEffect(() => {
     setTimeout(() => {
@@ -29,11 +34,17 @@ function App() {
             <p>Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO</p>
             <p>Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO</p>
           </div>
+          <Skills />
+          <div className="sep">
+            <p>Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO</p>
+            <p>Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO</p>
+          </div>
           <Works />
           <div className="sep">
             <p>Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO</p>
             <p>Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO   Matheus Luiz   2021 PORTFOLIO</p>
           </div>
+          <Contact />
         </>
       ) : (
         <Loading run={loading} next={next} />
