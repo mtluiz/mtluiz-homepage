@@ -32,7 +32,7 @@ function Welcome() {
       <span></span>
 
       <main className="portfolio-main">
-        <h1>Greetings, I'm Matheus</h1>
+        <h1>Greetings! I'm Matheus</h1>
         <h1>Full Stack Developer</h1>
         <h1>& Eternal Student</h1>
       </main>
