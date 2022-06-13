@@ -1,9 +1,9 @@
 import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import displacement from "../assets/displacement.png";
+import grid from "../assets/grid.png";
 
 import "./style.scss";
-
-
 
 function Vaporwave(canvas) {
 
@@ -23,12 +23,12 @@ function Vaporwave(canvas) {
   scene.fog = fog;
 
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load("../grid.png");
-  const terrain = textureLoader.load("../displacement.png");
+  const texture = textureLoader.load(grid);
+  const terrain = textureLoader.load(displacement);
 
   const geometry = new THREE.PlaneGeometry(1, 2, 24, 24);
   const material = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texture, displacementMap: terrain, displacementScale: 0.4 });
-  
+
   const plane = new THREE.Mesh(geometry, material);
   plane.rotation.x = -Math.PI * 0.5;
   plane.position.y = 0.0;
@@ -38,7 +38,7 @@ function Vaporwave(canvas) {
   plane2.rotation.x = -Math.PI * 0.5;
   plane2.position.y = 0.0;
   plane2.position.z = -1.85;
-  
+
   scene.add(plane);
   scene.add(plane2);
 
