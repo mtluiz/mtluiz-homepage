@@ -1,5 +1,10 @@
 import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+import { RGBShiftShader } from "three/examples/jsm/shaders/RGBShiftShader.js";
+
+
 import displacement from "../assets/displacement.png";
 import grid from "../assets/grid.png";
 
@@ -18,6 +23,14 @@ function Vaporwave(canvas) {
   const effectComposer = new EffectComposer(renderer);
   effectComposer.setSize(canvas.width, canvas.height);
   effectComposer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+  const renderPass = new RenderPass(scene, camera);
+  effectComposer.addPass(renderPass);
+
+  const shaderPass = new ShaderPass(RGBShiftShader);
+  shaderPass.uniforms.amount.value = 0.0015;
+
+  effectComposer.addPass(shaderPass);
 
   const fog = new THREE.Fog(0x000000, 1, 2.5);
   scene.fog = fog;
@@ -53,8 +66,8 @@ function Vaporwave(canvas) {
     plane.position.z = (elapsedTime * 0.15) % 2;
     plane2.position.z = ((elapsedTime * 0.15) % 2) - 2;
 
+    effectComposer.render();
     requestAnimationFrame(animate);
-    renderer.render(scene, camera);
   }
   animate();
 
