@@ -13,7 +13,7 @@ import "./style.scss";
 function Vaporwave(canvas) {
 
   const scene = new THREE.Scene();
-  const renderer = new THREE.WebGLRenderer({ canvas });
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
   const camera = new THREE.PerspectiveCamera(75, canvas.width / canvas.height, 0.1, 20);
   camera.position.x = 0;
   camera.position.y = 0.12;
