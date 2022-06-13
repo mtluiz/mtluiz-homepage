@@ -4,6 +4,8 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { RGBShiftShader } from "three/examples/jsm/shaders/RGBShiftShader.js";
 
+import ASScroll from "@ashthornton/asscroll";
+
 
 import displacement from "../assets/displacement.png";
 import grid from "../assets/grid.png";
@@ -63,8 +65,8 @@ function Vaporwave(canvas) {
   const animate = () => {
     const elapsedTime = clock.getElapsedTime();
 
-    plane.position.z = (elapsedTime * 0.15) % 2;
-    plane2.position.z = ((elapsedTime * 0.15) % 2) - 2;
+    plane.position.z = (elapsedTime * 0.2) % 2;
+    plane2.position.z = ((elapsedTime * 0.2) % 2) - 2;
 
     effectComposer.render();
     requestAnimationFrame(animate);
@@ -81,3 +83,13 @@ function Vaporwave(canvas) {
 
 const canvas = document.getElementById("screen");
 Vaporwave(canvas);
+
+const asscroll = new ASScroll();
+
+console.log(asscroll)
+
+window.addEventListener("load", ()=> {
+  asscroll.enable({horizontalScroll: true});
+})
+
+
