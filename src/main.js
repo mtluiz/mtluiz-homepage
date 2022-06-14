@@ -1,6 +1,6 @@
-import "../scss/index.scss";
 import Vaporwave from "./Vaporwave";
 import ASScroll from "@ashthornton/asscroll";
+import "../scss/index.scss";
 
 const canvas = document.getElementById("screen");
 Vaporwave(canvas);
