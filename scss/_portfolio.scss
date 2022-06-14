@@ -1,0 +1,113 @@
+#screen {
+  display: block;
+  position: fixed;
+  z-index: -1;
+}
+
+.portfolio {
+  display: flex;
+  width: 200%;
+  height: 100%;
+
+  &-header {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-content {
+      & > h1 {
+        font-size: 4.2rem;
+        font-family: "Raleway";
+      }
+      h1:nth-child(2) {
+        font-size: 7rem;
+        font-weight: 600;
+        font-family: "Raleway";
+        margin-left: 50px;
+      }
+      h2 {
+        font-family: "Playfair Display";
+        font-style: italic;
+        font-size: 6.5rem;
+        font-weight: bolder;
+      }
+    }
+  }
+
+  &-about {
+    background-color: black;
+  }
+
+  &-nav {
+    height: 7rem;
+    color: #fff;
+    width: 100vw;
+    border-bottom: 1px solid #fafafa;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    h3 {
+      font-size: 2rem;
+      font-family: "Raleway";
+      font-weight: 600;
+    }
+
+    nav {
+      ul {
+        display: flex;
+
+        li {
+          font-size: 1.4rem;
+          font-family: "Raleway";
+          margin-left: 3.5rem;
+          font-weight: 300;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__merch {
+      font-size: 1.6rem;
+      font-family: "Inter";
+      font-weight: 300;
+      border: 1.2px solid #fff;
+      padding: 0.8rem;
+      border-radius: 100px;
+      position: absolute;
+      width: 40%;
+      left: calc(50% - 20%);
+      overflow: hidden;
+
+      span {
+        display: flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        animation: animation2 10s linear infinite;
+        @keyframes animation2 {
+          from {
+            transform: translateX(-300%);
+          }
+          to {
+            transform: translateX(100%);
+          }
+        }
+      }
+      &:hover {
+        border-color: rgb(46, 143, 46);
+        cursor: pointer;
+        transition: 1s;
+      }
+    }
+  }
+}
+
+.container {
+  height: 100%;
+  width: 100vw;
+}
