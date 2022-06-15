@@ -6,7 +6,7 @@
 
 .portfolio {
   display: flex;
-  width: 200%;
+  width: 400%;
   height: 100%;
 
   &-header {
@@ -37,6 +37,45 @@
 
   &-about {
     background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-text {
+      display: grid;
+      grid-template-areas: "a b b" "c b b" "d d d";
+      gap: 4rem;
+      margin: 8rem;
+      font-family: Raleway;
+      i {
+        font-family: "Playfair Display";
+        font-style: italic;
+      }
+
+      p{
+        font-size: 2rem;
+      }
+
+      & > img {
+        grid-area: b;
+      }
+
+      p:nth-child(1){
+        grid-area: a;
+        width: 300px;
+        background-color: red;
+      }
+      p:nth-child(3){
+        grid-area: c;
+        background-color: gray;
+      }
+
+      p:nth-child(4){
+        grid-area: d;
+        background-color: green;
+      }
+    }
   }
 
   &-nav {
@@ -105,9 +144,18 @@
       }
     }
   }
+
+  &-works{
+    color: white;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .container {
   height: 100%;
   width: 100vw;
+  border: 1px solid rgba(255, 255, 255, 0.127);
 }
