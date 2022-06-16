@@ -2,3 +2,12 @@
 @import "animations";
 @import "fonts";
 @import "portfolio";
+
+
+.image-reveal{
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    z-index: 9999;
+}

@@ -1,4 +1,5 @@
 import Vaporwave from "./Vaporwave";
+import {imageReveal, testReveal }from "./imageReveal";
 import ASScroll from "@ashthornton/asscroll";
 import "../scss/index.scss";
 
@@ -13,4 +14,5 @@ window.addEventListener("load", ()=> {
   asscroll.enable({horizontalScroll: true});
 },{passive: true});
 
-
+//imageReveal(document.querySelector(".block__title"))
+testReveal();
