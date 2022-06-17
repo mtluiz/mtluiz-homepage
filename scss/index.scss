@@ -3,11 +3,19 @@
 @import "fonts";
 @import "portfolio";
 
+$green : #bfff07;
+$secondary-black: #0b0b0b;
+$main-black: #000000;
 
 .image-reveal{
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    opacity: 1;
+    position: absolute;
+    width: 180px;
+    height: 180px;
     z-index: 9999;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
+@keyframes image-reveal {
+    
+}   
