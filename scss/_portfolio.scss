@@ -1,9 +1,3 @@
-#screen {
-  display: block;
-  position: fixed;
-  z-index: -1;
-}
-
 .portfolio {
   display: flex;
   width: 400%;
@@ -46,14 +40,14 @@
       display: grid;
       grid-template-areas: "a b b" "c b b" "d d d";
       gap: 4rem;
-      margin: 8rem;
+      margin: 8%;
       font-family: Raleway;
       i {
         font-family: "Playfair Display";
         font-style: italic;
       }
 
-      p{
+      p {
         font-size: 2rem;
       }
 
@@ -61,19 +55,20 @@
         grid-area: b;
       }
 
-      p:nth-child(1){
+      p:nth-child(1) {
         grid-area: a;
-        width: 300px;
-        background-color: red;
+        max-width: 100%;
+        font-size: 4rem;
       }
-      p:nth-child(3){
+      p:nth-child(3) {
         grid-area: c;
-        background-color: gray;
+        max-width: 100%;
       }
 
-      p:nth-child(4){
+      p:nth-child(4) {
         grid-area: d;
-        background-color: green;
+        height: 15vh;
+        background-color: red;
       }
     }
   }
@@ -145,17 +140,24 @@
     }
   }
 
-  &-works{
+  &-works {
     color: white;
     font-size: 4rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    &-header{
+      text-align: center;
+      font-size: 7rem;
+      h1:nth-child(1){
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        font-size: 6rem;
+      }
+      h1:nth-child(2){
+        font-family: "Playfair Display";
+        font-style: italic;
+        font-weight: bolder;
+      }
+    }
   }
-}
-
-.container {
-  height: 100%;
-  width: 100vw;
-  border: 1px solid rgba(255, 255, 255, 0.127);
 }

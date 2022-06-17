@@ -1,0 +1,17 @@
+.image-reveal{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    z-index: 9999;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+[data-reveal-image]{
+    cursor: pointer;
+}
+
+@keyframes image-reveal {
+    
+}  
