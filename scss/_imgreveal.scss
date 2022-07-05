@@ -9,9 +9,29 @@
 }
 
 [data-reveal-image]{
-    cursor: pointer;
+    position: relative;
+    color: green;
 }
 
-@keyframes image-reveal {
-    
+[data-reveal-image]::after{
+    content: '';
+    width: 100%;
+    bottom: 0.25rem;
+    left: 2px;
+    position: absolute;
+    height: 2px;
+    background: currentColor;
+    display: block;
+    transform: scale3d(0,1,1);
+
+}
+
+[data-reveal-image]:hover::after{
+        transform: scale3d(1,1,1);
+}
+
+@keyframes underline {
+    from {
+        
+    }
 }  
