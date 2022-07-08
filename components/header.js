@@ -28,7 +28,7 @@ export default function Header() {
 
   return (
     <>
-      <TechHome></TechHome>
+      <TechHome />
       <Box
         as="nav"
         w="100%"
