@@ -1,26 +1,26 @@
 import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import * as THREE from "three";
+import loadOBJ from "../lib/model";
 
 function createStars(quantity, objectsDistance) {
   const positions = new Float32Array(quantity * 3);
 
   for (let i = 0; i < quantity; i++) {
-    positions[i * 3 + 0] = (Math.random() - 0.5) * 10;
-    positions[i * 3 + 1] = objectsDistance * 0.5 - Math.random() * objectsDistance * 10;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+    positions[i * 3 + 0] = (Math.random() - 0.5) * 15;
+    positions[i * 3 + 1] = objectsDistance * 0.5 - Math.random() * objectsDistance * 4;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 1;
   }
 
   const particlesGeometry = new THREE.BufferGeometry();
   particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
   const particlesMaterial = new THREE.PointsMaterial({
-    color: '#ffffff',
+    color: '#efefef',
     sizeAttenuation: true,
     size: 0.03
   });
   const particles = new THREE.Points(particlesGeometry, particlesMaterial);
   return particles;
 }
-
 
 export default function TechHome() {
 
@@ -52,9 +52,16 @@ export default function TechHome() {
     const stars = createStars(800, 14);
     scene.add(stars);
 
+    const clock = new THREE.Clock();
+
+    //loadOBJ("./jslogo/JsLogo.obj", scene);
 
     function animate() {
-      cube.rotation.y += 0.01;
+      cube.rotation.y += 0.01; 0;
+
+      const elapsedTime = clock.getElapsedTime();
+
+      stars.rotation.z = elapsedTime * 0.1;
 
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
