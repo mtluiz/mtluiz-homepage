@@ -8,4 +8,16 @@
 body {
   -webkit-font-smoothing: antialised;
   text-rendering: geometricPrecision;
+  overflow-x: hidden;
+}
+
+*{
+box-sizing: border-box;
+}
+
+#home-screen{
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
 }
