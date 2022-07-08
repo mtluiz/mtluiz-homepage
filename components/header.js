@@ -3,6 +3,7 @@ import Sun from "pixelarticons/svg/sun.svg";
 import Bed from "pixelarticons/svg/bed.svg";
 import Burger from "pixelarticons/svg/backburger.svg";
 import github from "../public/images/github-icon.gif";
+import TechHome from "./tech-home";
 import Image from "next/image";
 import {
   useColorMode,
@@ -27,12 +28,12 @@ export default function Header() {
 
   return (
     <>
+      <TechHome></TechHome>
       <Box
         as="nav"
         w="100%"
         maxW={1320}
         height={"100vh"}
-        css={{ backdropFilter: "blur(8px)" }}
         p={12}
       >
         <Box display={"flex"} wrap="wrap" alignItems="center" w={"100%"} justifyContent="space-between">
