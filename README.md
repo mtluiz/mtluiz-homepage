@@ -21,5 +21,7 @@ $PROJECT_ROOT
 ├── lib
 │   # Static files for images and 3d model file
 └── public
+│   # Stylesheet files
+└── styles
 ```
 
