@@ -28,7 +28,7 @@ export default function Header() {
 
   return (
     <>
-      <TechHome />
+      <TechHome colorMode={colorMode} />
       <Box
         as="nav"
         w="100%"
@@ -52,9 +52,9 @@ export default function Header() {
                 flexGrow={1}
                 mt={{ base: 4, md: 0 }}
               >
-                <LinkItem href="/about">/works</LinkItem>
+                <LinkItem href="/works">/works</LinkItem>
 
-                <LinkItem href="/about">/posts</LinkItem>
+                <LinkItem href="/posts">/posts</LinkItem>
               </Stack>
 
               <Flex>
@@ -89,12 +89,14 @@ export default function Header() {
           justifyContent={"center"}
           alignItems={"flex-start"}
         >
-          <Heading as={"h1"} >Hi, I&apos;m Matheus</Heading>
+          <Heading as={"h1"} >
+            Sup, I&apos;m Matheus.
+          </Heading>
           <Heading as={"h1"} >
             A Full Stack Developer
           </Heading>
           <Heading as={"h1"} >
-            Based in Brazil
+            based in Brazil.
           </Heading>
         </Box>
       </Box>

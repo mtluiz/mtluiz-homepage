@@ -1,34 +1,18 @@
-import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import loadOBJ from "../lib/model";
+import createStars from "../lib/create-stars";
+import { chooseColor, chooseColorObj } from "../utils/choose-colors";
 
-function createStars(quantity, objectsDistance) {
-  const positions = new Float32Array(quantity * 3);
-
-  for (let i = 0; i < quantity; i++) {
-    positions[i * 3 + 0] = (Math.random() - 0.5) * 15;
-    positions[i * 3 + 1] = objectsDistance * 0.5 - Math.random() * objectsDistance * 4;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 1;
-  }
-
-  const particlesGeometry = new THREE.BufferGeometry();
-  particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  const particlesMaterial = new THREE.PointsMaterial({
-    color: '#efefef',
-    sizeAttenuation: true,
-    size: 0.03
-  });
-  const particles = new THREE.Points(particlesGeometry, particlesMaterial);
-  return particles;
-}
-
-export default function TechHome() {
-
+export default function TechHome({ colorMode }) {
   const screen = useRef(null);
-
   const [renderer, setRenderer] = useState(null);
   const [scene, setScene] = useState(null);
   const [camera, setCamera] = useState(null);
+  const [stars, setStars] = useState(null);
+
+  useEffect(() => {
+    if (stars) stars.material.color = chooseColorObj(colorMode);
+  }, [colorMode]);
 
   useEffect(() => {
     const { current: container } = screen;
@@ -45,11 +29,22 @@ export default function TechHome() {
     const geom = new THREE.BoxGeometry(1, 1, 1);
     const text = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const cube = new THREE.Mesh(geom, text);
-    cube.position.x = 3;
-    camera.position.z = 5;
-    scene.add(cube);
+    const cube1 = new THREE.Mesh(geom, text);
+    const cube2 = new THREE.Mesh(geom, text);
+    cube.position.x = 2;
 
-    const stars = createStars(800, 14);
+    cube1.position.x = 0.8;
+    cube1.position.y = 1.8;
+
+    cube2.position.x = 0.8;
+    cube2.position.y = - 1.8;
+
+    camera.position.z = 5;
+    scene.add(cube, cube1, cube2);
+
+    const stars = createStars(800, 14, chooseColor(colorMode));
+    window.stars = stars;
+    setStars(stars);
     scene.add(stars);
 
     const clock = new THREE.Clock();
@@ -66,7 +61,6 @@ export default function TechHome() {
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
     }
-
     animate();
 
     function handleResize() {
@@ -76,6 +70,7 @@ export default function TechHome() {
     };
 
     window.addEventListener('resize', handleResize, false);
+
   }, []);
 
   return (
