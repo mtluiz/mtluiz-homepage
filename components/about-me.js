@@ -25,9 +25,6 @@ export default function AboutMe() {
         <br />
         <br />
         Currently, he is working for a company called Globo in the team that maintains the biggest news website in Brasil, <Link href="https://globo.com">globo.com</Link>.
-        <br />
-        <br />
-        He also does some freelance work related to the web, like CMS&apos;s and web apps.
       </Text>
     </Container>
   );
