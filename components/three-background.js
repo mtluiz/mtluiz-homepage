@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import React, { useEffect, useRef, useState } from "react";
 import createStars from "../lib/create-stars";
 import { chooseColor, chooseColorObj } from "../utils/choose-colors";
+import loadOBJ from "../lib/model";
 
-export default function TechHome({ colorMode }) {
+
+export default function ThreeBackground({ colorMode }) {
   const screen = useRef(null);
   const [renderer, setRenderer] = useState(null);
   const [scene, setScene] = useState(null);
@@ -12,6 +14,7 @@ export default function TechHome({ colorMode }) {
 
   useEffect(() => {
     if (stars) stars.material.color = chooseColorObj(colorMode);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [colorMode]);
 
   useEffect(() => {
@@ -49,7 +52,7 @@ export default function TechHome({ colorMode }) {
 
     const clock = new THREE.Clock();
 
-    //loadOBJ("./jslogo/JsLogo.obj", scene);
+    //loadOBJ("models/jslogo/JsLogo.obj", scene);
 
     function animate() {
       cube.rotation.y += 0.01; 0;
@@ -71,6 +74,7 @@ export default function TechHome({ colorMode }) {
 
     window.addEventListener('resize', handleResize, false);
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

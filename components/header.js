@@ -2,8 +2,7 @@ import React from "react";
 import Sun from "pixelarticons/svg/sun.svg";
 import Bed from "pixelarticons/svg/bed.svg";
 import Burger from "pixelarticons/svg/backburger.svg";
-import github from "../public/images/github-icon.gif";
-import TechHome from "./tech-home";
+import ThreeBackground from "./three-background";
 import Image from "next/image";
 import {
   useColorMode,
@@ -28,7 +27,7 @@ export default function Header() {
 
   return (
     <>
-      <TechHome colorMode={colorMode} />
+      <ThreeBackground colorMode={colorMode} />
       <Box
         as="nav"
         w="100%"
@@ -62,7 +61,7 @@ export default function Header() {
                   colorScheme={"gray"}
                   variant={"solid"}
                   mr={12}
-                  rightIcon={<Image src={github} width={30} height={30} alt="" />}
+                  rightIcon={<Image src="/images/github-icon.gif" width={30} height={30} alt="" />}
                 >
                   source
                 </Button>
