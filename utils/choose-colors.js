@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
 export function chooseColor(mode) {
-  return mode == "light" ? 0x00000 : 0xffffff;
+  return mode == "light" ? 0xffffff : 0x00000;
 }
 
 export function chooseColorObj(mode) {
