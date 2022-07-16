@@ -1,21 +1,18 @@
 import * as THREE from "three";
 import React, { useEffect, useRef, useState } from "react";
-import createStars from "../lib/create-stars";
-import { chooseColor, chooseColorObj } from "../utils/choose-colors";
-import loadOBJ from "../lib/model";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
+import { RGBShiftShader } from "three/examples/jsm/shaders/RGBShiftShader.js";
 
+import displacement from "../public/images/displacement.png";
+import grid from "../public/images/grid.png";
 
 export default function ThreeBackground({ colorMode }) {
   const screen = useRef(null);
   const [renderer, setRenderer] = useState(null);
   const [scene, setScene] = useState(null);
   const [camera, setCamera] = useState(null);
-  const [stars, setStars] = useState(null);
-
-  useEffect(() => {
-    if (stars) stars.material.color = chooseColorObj(colorMode);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [colorMode]);
 
   useEffect(() => {
     const { current: container } = screen;
@@ -45,21 +42,12 @@ export default function ThreeBackground({ colorMode }) {
     camera.position.z = 5;
     scene.add(cube, cube1, cube2);
 
-    const stars = createStars(800, 14, chooseColor(colorMode));
-    window.stars = stars;
-    setStars(stars);
-    scene.add(stars);
-
     const clock = new THREE.Clock();
-
-    //loadOBJ("models/jslogo/JsLogo.obj", scene);
 
     function animate() {
       cube.rotation.y += 0.01; 0;
 
       const elapsedTime = clock.getElapsedTime();
-
-      stars.rotation.z = elapsedTime * 0.1;
 
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
@@ -73,8 +61,6 @@ export default function ThreeBackground({ colorMode }) {
     };
 
     window.addEventListener('resize', handleResize, false);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
