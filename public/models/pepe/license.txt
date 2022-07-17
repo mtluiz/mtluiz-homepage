@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pepe The Frog
+* source:	https://sketchfab.com/3d-models/pepe-the-frog-a20102040f1341c38c4f5bb92c0da2a2
+* author:	Larry (https://sketchfab.com/laurent-dem1994)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pepe The Frog" (https://sketchfab.com/3d-models/pepe-the-frog-a20102040f1341c38c4f5bb92c0da2a2) by Larry (https://sketchfab.com/laurent-dem1994) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
