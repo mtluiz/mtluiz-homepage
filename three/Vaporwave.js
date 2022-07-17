@@ -4,9 +4,6 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { RGBShiftShader } from "three/examples/jsm/shaders/RGBShiftShader.js";
 
-import displacement from "./displacement.png";
-import grid from "./grid.png";
-
 export default function Vaporwave(canvas) {
 
   const scene = new THREE.Scene();
@@ -33,8 +30,8 @@ export default function Vaporwave(canvas) {
   scene.fog = fog;
 
   const textureLoader = new THREE.TextureLoader();
-  const texture = textureLoader.load(grid.src);
-  const terrain = textureLoader.load(displacement.src);
+  const texture = textureLoader.load("/images/grid.png");
+  const terrain = textureLoader.load("/images/displacement.png");
 
   const geometry = new THREE.PlaneGeometry(1, 2, 24, 24);
   const material = new THREE.MeshStandardMaterial({ color: 0xffffff, map: texture, displacementMap: terrain, displacementScale: 0.4 });
