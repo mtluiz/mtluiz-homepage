@@ -26,7 +26,13 @@ export default function Header() {
   const [isMobile] = useMediaQuery("(min-width: 770px)");
 
   return (
-    <>
+    <Box
+      w={"100%"}
+      display={"flex"}
+      justifyContent="center"
+      alignItems={"center"}
+      background="linear-gradient(0deg, rgba(0,0,0,1) 10%, rgba(0,212,255,0) 100%)"
+    >
       <ThreeBackground colorMode={colorMode} />
       <Box
         as="nav"
@@ -99,6 +105,6 @@ export default function Header() {
           </Heading>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
