@@ -17,14 +17,14 @@ export default function AboutMe() {
         <Text
           my={4}
         >
-          Matheus is a javascript enthusiast with a passion for building digital services/stuff he wants.
+          Matheus is a javascript enthusiast with a passion for building digital stuff he wants.
           <br />
           <br />
-          He&apos;s obsessed with all things web, from planning and designing all the way to solving real-life problems.
-          When not at work, he plays some video games and creates some useless stuff with experimental technologies.
+          He&apos;s obsessed with all things web, from planning all the way to solving real-life problems.
+          When not at work, he plays some games and creates useless stuff with experimental technologies.
           <br />
           <br />
-          Currently he is working for a company called Globo, in the team that maintains one of the biggest news websites in Brasil, <Link href="https://globo.com">globo.com</Link>.
+          Currently he is working for Globo, in the team that maintains one of the biggest news websites in Brasil, <Link href="https://globo.com">globo.com</Link>.
         </Text>
 
         <Button display={"block"} width={"300px"} margin={"0 auto"} colorScheme={"messenger"}>
@@ -43,6 +43,28 @@ export default function AboutMe() {
         >
           Skills
         </Heading>
+
+        <Text>const frontend = </Text>
+        <Box
+          w={"100%"}
+          my={1}
+          display="flex"
+          alignItems={"center"}
+        >
+          <Heading fontSize={"9xl"}>[</Heading>
+          <Box
+            flexGrow={1}
+            display={"flex"}
+            justifyContent={"space-evenly"}
+            w={"100%"}
+            height={100}
+            background="red"
+          >
+          </Box>
+          <Heading fontSize={"9xl"}>]</Heading>
+        </Box>
+
+        <Text>const backend = </Text>
         <Box
           w={"100%"}
           my={1}

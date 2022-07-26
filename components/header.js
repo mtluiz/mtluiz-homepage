@@ -93,14 +93,15 @@ export default function Header() {
           flexDirection={"column"}
           justifyContent={"center"}
           alignItems={"flex-start"}
+          size={"4xl"}
         >
-          <Heading as={"h1"} >
+          <Heading as={"h1"} size={"2xl"}>
             Sup, I&apos;m Matheus.
           </Heading>
-          <Heading as={"h1"} >
-            A Full Stack Developer
+          <Heading as={"h1"} size={"2xl"}>
+            A  <span>Full Stack Developer</span>
           </Heading>
-          <Heading as={"h1"} >
+          <Heading as={"h1"} size={"2xl"}>
             based in Brazil.
           </Heading>
         </Box>
