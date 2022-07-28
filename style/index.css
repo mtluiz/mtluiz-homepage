@@ -2,11 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 @font-face {
-  font-family: ms-dos;
-  src: url('../public/fonts/Perfect DOS VGA 437.ttf');
-}
-
-@font-face {
   font-family: Thunder;
   src: url('../public/fonts/Thunder-BoldLC.ttf');
 }
