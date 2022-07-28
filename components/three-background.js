@@ -1,6 +1,6 @@
-import * as THREE from "three";
 import React, { useEffect, useRef, useState } from "react";
-import Vaporwave from "../three/Vaporwave";
+import * as THREE from "three";
+import Vaporwave from "../lib/vaporwave";
 
 export default function ThreeBackground({ colorMode }) {
   const screen = useRef(null);

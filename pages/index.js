@@ -1,27 +1,18 @@
 import Loader from "../components/loader";
-import Header from "../components/header";
-import AboutMe from "../components/about-me";
-import InteractiveFooter from "../components/interactive-footer";
-
-import Head from "next/head";
-import { Flex, Container, Box } from "@chakra-ui/react";
-
+import HomeSection from "../components/home";
+import Setup from "../components/setup";
+import Footer from "../components/footer";
+import Portfolio from "../components/portfolio";
+import Skills from "../components/skills";
 
 export default function Home() {
   return (
-    <Flex
-      direction={"column"}
-      alignItems={"center"}
-    >
-      <Header />
-      <Box
-        as={"main"}
-        maxW={1320}
-        w={"100%"}
-      >
-        <AboutMe />
-      </Box>
-      <InteractiveFooter />
-    </Flex>
+    <>
+      <Setup />
+      <HomeSection />
+      <Skills />
+      <Portfolio />
+      <Footer />
+    </>
   );
 }

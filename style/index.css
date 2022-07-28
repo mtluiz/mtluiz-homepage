@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 @font-face {
-  font-family: ms-dos;
-  src: url('../public/fonts/Perfect DOS VGA 437.ttf')
+  font-family: Thunder;
+  src: url('../public/fonts/Thunder-BoldLC.ttf');
 }
 
 body {
@@ -20,4 +21,56 @@ box-sizing: border-box;
   position: absolute;
   overflow: hidden;
   z-index: -1;
+}
+
+.noise {
+  position: fixed;
+  z-index: 9999;
+  top: -300%;
+  left: -150%;
+  height: 600%;
+  width: 600%;
+  animation: grain 7s steps(10) infinite;
+  background-image: url(https://itssharl.ee/noise.png);
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@keyframes grain {
+  0% {
+    transform: translate(0);
+  }
+
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%);
+  }
+  70% {
+    transform: translateY(15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
