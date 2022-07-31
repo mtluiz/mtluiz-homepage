@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
+import Image from 'next/image';
 import { BsTwitter } from "react-icons/bs";
 import { FaDiscord, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 import { Flex, Box, Text, Heading, Button } from "@chakra-ui/react";
@@ -27,7 +28,7 @@ export default function Footer() {
         justifyContent={"space-evenly"}
         m={16}
       >
-        <img src="https://www.suku.world/img/logo.svg" width={100} alt="" />
+        <Image src="/images/logo.svg" width={140} height={40} alt="" />
         <Flex gap={6}>
           <FaDiscord size={30}></FaDiscord>
           <FaLinkedinIn size={30}></FaLinkedinIn>

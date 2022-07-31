@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { useColorMode, useMediaQuery, Box, Heading, Text, Link, Flex, Button } from "@chakra-ui/react";
 
 export default function HomeSection() {
@@ -19,7 +20,7 @@ export default function HomeSection() {
           py={8}
           px={"4.5vw"}
         >
-          <img src="https://www.suku.world/img/logo.svg" alt="" />
+          <Image src="/images/logo.svg" width={140} height={40} alt="" />
           <Text fontSize="xs">Web developer based in Brazil.</Text>
         </Flex>
         <Heading
@@ -37,23 +38,23 @@ export default function HomeSection() {
         my={"10vh"}
       >
         <Box>
-          <Heading>DISCOVER SUKU</Heading>
-          <Button>LEARN MORE</Button>
+          <Heading>DISCOVER MATHEUS</Heading>
+          <button className="button button--anthe"><span>Learn more</span></button>
         </Box>
 
         <img src="/images/ball.png" alt="" width={400} style={{ position: "absolute", left: "calc(50% - 200px)", bottom: "6vh", zIndex: -1 }} />
 
         <Box>
           <Text
-            fontSize="xs"
+            fontSize="sm"
             maxWidth="300px"
           >
-            Suku is an ecosystem that brings web3 communities together,
-            providing them with simple yet powerful tools and incentives
-            to grow faster and stronger, and to unlock unique experiences.
-            All, powered by SUKU.
+            Matheus is a &quot;full stack&quot; developer, javascript enthusiast
+            and web developer based in Rio de Janeiro, Brazil.
+            He&apos;s always looking for new works
+            and projects to improve his dev skills.
           </Text>
-          <Link>Explore Ecosystem</Link>
+          <button className="button button--anthe"><span>Explore Portfolio</span></button>
         </Box>
       </Flex>
     </Flex>
