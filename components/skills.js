@@ -58,22 +58,27 @@ export default function Skills() {
 
   return (
     <Flex
-      minH={"70vw"}
+      minH={"auto"}
       px={"4.5vw"}
-      py={"20vh"}
+      py={"1vh"}
       flexDir={"column"}
       justifyContent="center"
       alignItems={"center"}
       position={"relative"}
     >
       <Box h={"100%"} w={"100%"}>
-
         <Box>
-          <Heading fontSize={"7xl"}>SKILLS</Heading>
-          <Text maxW={"600px"}>
-            SUKU allows users to engage and earn across our and our partners platforms.
-            It connects web3 participants, digital assets, and protocols while enabling use cases and delivering value for the entire ecosystem.
-            Through gamification mechanics, SUKU provides access and unlocks exclusive experiences in the Metaverse.
+          <Flex alignItems={"center"}>
+            <div className='square-separator'>
+              <div className='square'></div>
+              <div className="dotted"></div>
+            </div>
+            <Heading fontSize={"7xl"} lineHeight={"20px"}>SKILLS</Heading>
+          </Flex>
+          <Text fontSize={"m"} maxW={"600px"}>
+            He is an aficionado in all things Javascript.<br />
+            It doesn&apos;t matter if we&apos;re talking about APIs, CLIs <br />or web pages, he&apos;s always on the grind to hone his craft.<br />
+            Checkout a list of technologies he usually works with:
           </Text>
         </Box>
       </Box>
