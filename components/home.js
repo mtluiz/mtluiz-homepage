@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { useColorMode, useMediaQuery, Box, Heading, Text, Link, Flex, Button } from "@chakra-ui/react";
+import { useColorMode, useMediaQuery, Box, Heading, Text, Flex } from "@chakra-ui/react";
+import Blob from "./three-blob";
 
 export default function HomeSection() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -39,10 +40,10 @@ export default function HomeSection() {
       >
         <Box>
           <Heading>DISCOVER MATHEUS</Heading>
-          <button className="button button--anthe"><span>Learn more</span></button>
+          <button className="button button--anthe"><span>Explore Skills</span></button>
         </Box>
 
-        <img src="/images/ball.png" alt="" width={400} style={{ position: "absolute", left: "calc(50% - 200px)", bottom: "6vh", zIndex: -1 }} />
+        <Blob></Blob>
 
         <Box>
           <Text
