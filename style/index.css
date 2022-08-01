@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 @font-face {
-  font-family: ms-dos;
-  src: url('../public/fonts/Perfect DOS VGA 437.ttf')
+  font-family: Thunder;
+  src: url('../public/fonts/Thunder-BoldLC.ttf');
 }
 
 body {
@@ -20,4 +21,107 @@ box-sizing: border-box;
   position: absolute;
   overflow: hidden;
   z-index: -1;
+}
+
+.noise {
+  position: fixed;
+  z-index: 9999;
+  top: -300%;
+  left: -150%;
+  height: 600%;
+  width: 600%;
+  animation: grain 7s steps(10) infinite;
+  background-image: url(https://itssharl.ee/noise.png);
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+@keyframes grain {
+  0% {
+    transform: translate(0);
+  }
+
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%);
+  }
+  70% {
+    transform: translateY(15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+
+.button {
+	pointer-events: auto;
+	cursor: pointer;
+	background: #e7e7e7;
+	border: none;
+	padding: 0.5rem 3rem;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	position: relative;
+	display: inline-block;
+  margin-top: 16px
+}
+
+.button::before,
+.button::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+}
+
+.button--anthe {
+	color: #fff;
+	background: none;
+}
+
+.button--anthe::before {
+	content: '';
+	background: #000;
+	clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+	transition: clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1), -webkit-clip-path 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.button--anthe:hover::before {
+	background: #00ff00;
+	clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+}
+
+.button--anthe span {
+	display: block;
+	mix-blend-mode: difference;
+	transition: transform 0.4s cubic-bezier(0.2, 1, 0.8, 1);
+}
+
+.button--anthe:hover span {
+	transform: translate3d(-10px,0,0);
 }
