@@ -162,9 +162,9 @@ box-sizing: border-box;
 
 
 .gradient-bg{
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ffffff, #00ff00, #aaffaa, #00ff00);
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 10s ease infinite;
 }
 
 @keyframes gradient {
@@ -177,4 +177,14 @@ box-sizing: border-box;
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+.hidden{
+  display: none !important;
+}
+
+
+.footer_link:hover{
+  transition: 0.5s;
+  color: #00ff00;
 }
