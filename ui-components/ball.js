@@ -175,7 +175,7 @@ const settings = {
   intensity: 7.0,
 };
 
-export default function ball(canvas) {
+export default function ball(canvas, size) {
 
   canvas.addEventListener("mouseenter", () => {
     settings.speed = 1;
@@ -192,7 +192,7 @@ export default function ball(canvas) {
   const camera = new THREE.PerspectiveCamera(75, 1, 1000, 0.1);
   camera.position.z = 1.8;
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: false, alpha: true });
-  renderer.setSize(400, 400);
+  renderer.setSize(size, size);
 
   const geometry = new THREE.IcosahedronBufferGeometry(1, 32);
   const material = new THREE.ShaderMaterial({
