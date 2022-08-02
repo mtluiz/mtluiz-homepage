@@ -5,50 +5,58 @@ import Blob from "./three-blob";
 
 export default function HomeSection() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const [isMobile] = useMediaQuery("(min-width: 770px)");
+  const [isMobile] = useMediaQuery("(max-width: 770px)");
 
   return (
     <Flex
       flexDir={"column"}
-      justifyContent={"space-between"}
-      h="100vh"
+      justifyContent={isMobile ? "" : "space-between"}
+      maxH="100vh"
       position="relative"
     >
       <Box>
         <Flex
-          justifyContent="space-between"
+          justifyContent={isMobile ? "center" : "space-between"}
           alignItems="center"
           py={8}
           px={"4.5vw"}
         >
           <Image src="/images/logo.svg" width={140} height={40} alt="" />
-          <Text fontSize="xs">Web developer based in Brazil.</Text>
+          {!isMobile && <Text fontSize="xs">Web developer based in Brazil.</Text>}
         </Flex>
         <Heading
-          fontSize={"14vw"}
-          whiteSpace="nowrap"
+          fontSize={isMobile ? "22vw" : "14vw"}
+          whiteSpace={isMobile ? "wrap" : "nowrap"}
           w="100%"
           textAlign="center"
+          lineHeight={isMobile ? "17vw" : "auto"}
         >
           FULL STACK DEVELOPER
         </Heading>
       </Box>
       <Flex
-        justifyContent="space-between"
+        justifyContent={isMobile ? "" : "space-between"}
         px={"4.5vw"}
-        my={"10vh"}
+        my={isMobile ? "" : "2vh"}
+        flexDir={isMobile ? "column" : ""}
+        alignItems={isMobile ? "center" : ""}
       >
-        <Box>
+        <Box display={isMobile ? "none" : "flex"} flexDir={"column"} alignItems={"flex-start"} justifyContent={"flex-end"}>
           <Heading>DISCOVER MATHEUS</Heading>
           <button className="button button--anthe"><span>Explore Skills</span></button>
         </Box>
 
-        <Blob></Blob>
+        <Blob />
 
-        <Box>
+        <Box display={isMobile ? "flex" : "flex"}
+          flexDir={"column"}
+          alignItems={isMobile ? "center" : "flex-start"}
+          justifyContent={"flex-end"}
+        >
           <Text
-            fontSize="sm"
+            fontSize={isMobile ? "lg" : "sm"}
             maxWidth="300px"
+            textAlign={isMobile ? "center" : ""}
           >
             Matheus is a &quot;full stack&quot; developer, javascript enthusiast
             and web developer based in Rio de Janeiro, Brazil.
@@ -58,6 +66,6 @@ export default function HomeSection() {
           <button className="button button--anthe"><span>Explore Portfolio</span></button>
         </Box>
       </Flex>
-    </Flex>
+    </Flex >
   );
 }
