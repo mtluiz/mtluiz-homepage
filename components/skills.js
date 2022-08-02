@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef, useState } from 'react';
-import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, useMediaQuery } from '@chakra-ui/react';
 import gsap from 'gsap';
 
 const techStack = [
@@ -18,7 +18,9 @@ const techStack = [
 
 export default function Skills() {
   const carroussel = useRef(null);
-  const imgWidth = 180;
+  const [isMobile] = useMediaQuery("(max-width: 770px)");
+  const imgWidth = isMobile ? 120 : 180;
+
 
   useEffect(() => {
     const { current } = carroussel;
@@ -28,19 +30,6 @@ export default function Skills() {
     dom.button = current.querySelector("button");
     const tl = gsap.timeline({ paused: true });
 
-    tl.addLabel("start")
-      .set(dom.el, { autoAlpha: 1, width: "100%" })
-      .set(dom.images, { position: "absolute", right: "10px" })
-      .set(dom.images, { x: (window.innerWidth / 12) * 2, rotation: 0 })
-      .to(dom.images, { duration: 1, stagger: 0.07, ease: 'power3.inOut', x: 0, y: 0 })
-      .to(dom.images[0], { duration: 1, ease: 'power3', rotation: -4 }, 'start')
-      .to(dom.images[1], { duration: 1, ease: 'power4', rotation: -2 }, 'start')
-      .to(dom.images, { x: (window.innerWidth / 12) * 2, rotation: 0 })
-      .to(dom.el, { width: "auto", right: "-3000px" })
-      .to(dom.images, { x: 0, rotation: 0 })
-      .set(dom.images, { position: "static" })
-      .to(dom.el, { width: "auto", right: "auto", ease: 'power4', duration: 1.5 });
-
     const handler = (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -49,9 +38,9 @@ export default function Skills() {
       });
     };
 
-    let observer = new IntersectionObserver(handler);
+    //let observer = new IntersectionObserver(handler);
 
-    observer.observe(dom.el);
+    //observer.observe(dom.el);
 
 
   }, []);
@@ -59,14 +48,13 @@ export default function Skills() {
   return (
     <Flex
       minH={"auto"}
-      px={"4.5vw"}
-      py={"1vh"}
+      py={isMobile ? "12vh" : "20vh"}
       flexDir={"column"}
       justifyContent="center"
       alignItems={"center"}
       position={"relative"}
     >
-      <Box h={"100%"} w={"100%"}>
+      <Box h={"100%"} w={"100%"} px={"4.5vw"}>
         <Box>
           <Flex alignItems={"center"}>
             <div className='square-separator'>
@@ -75,18 +63,20 @@ export default function Skills() {
             </div>
             <Heading fontSize={"7xl"} lineHeight={"20px"}>SKILLS</Heading>
           </Flex>
-          <Text fontSize={"m"} maxW={"600px"}>
-            He is an aficionado in all things Javascript.<br />
-            It doesn&apos;t matter if we&apos;re talking about APIs, CLIs <br />or web pages, he&apos;s always on the grind to hone his craft.<br />
+          <Text fontSize={isMobile ? "lg" : "md"} maxW={"600px"}>
+            He is an aficionado in all things Javascript.
+            It doesn&apos;t matter if we&apos;re talking about APIs, CLIs or web pages, he&apos;s always on the grind to hone his craft.
+            <br />
+            <br />
             Checkout a list of technologies he usually works with:
           </Text>
         </Box>
       </Box>
 
 
-      <Box ref={carroussel} mt={"80px"} w={"100%"} h={"200px"}>
+      <Box ref={carroussel} mt={"40px"} w={"100%"} h={isMobile ? "150px" : "200px"} overflow="scroll" px={isMobile ? "0px" : "4.5vw"}>
         <div className='placeholders'
-          style={{ display: "flex", gap: "40px", position: "absolute" }}
+          style={{ display: "flex", gap: "40px", width: "max-content" }}
         >
           {techStack.map(({ image, name, years }) => (
             <div key={name} className='placeholders__image' style={{

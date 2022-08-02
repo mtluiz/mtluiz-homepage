@@ -1,7 +1,8 @@
 import React from 'react';
-import { Heading } from "@chakra-ui/react";
+import { Heading, useMediaQuery } from "@chakra-ui/react";
 
 export default function Setup() {
+  const [isMobile] = useMediaQuery("(max-width: 770px)");
   return (
     <>
       <div className="noise"></div>
@@ -13,7 +14,7 @@ export default function Setup() {
         w="100%"
         zIndex={"-1"}
         opacity={"0.1"}
-        top="-10vw"
+        top={isMobile ? "6px" : "-10vw"}
       >
         JS ENTHUSIAST
       </Heading>
