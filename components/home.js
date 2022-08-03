@@ -26,6 +26,7 @@ export default function HomeSection() {
         </Flex>
         <Heading
           fontSize={isMobile ? "22vw" : "14vw"}
+          className={"home__title"}
           whiteSpace={isMobile ? "wrap" : "nowrap"}
           w="100%"
           textAlign="center"
