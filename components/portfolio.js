@@ -5,7 +5,7 @@ import { Highlight } from '@chakra-ui/react';
 const experiences = [
   {
     title: "globo.com",
-    content: "Globo.com is one of the most acessed websites in Brazil, serving new and content to the whole country and having more than 1kk views per month",
+    content: "Globo.com is one of the most acessed websites in Brazil, serving news and content to the whole country and amounting more than 1kk views per month",
     link: "https://globo.com",
   },
   {
@@ -29,7 +29,7 @@ export default function Portfolio() {
     >
       <Box boxShadow="inset 10px 10px 100px 100px red">
         <Heading
-          fontSize={"10rem"}
+          fontSize={isMobile ? "100px" : "200px"}
           opacity={"0.04"}
           position="absolute"
           zIndex={"-1"}
@@ -51,7 +51,7 @@ export default function Portfolio() {
         boxShadow="rgb(73 73 73 / 20%) 0px 50px 250px"
         p={isMobile ? "10px" : "60px"}
         my={"6vw"}
-        mx={isMobile ? "10px" : "15vw"}
+        mx={isMobile ? "10px" : "8vw"}
         borderRadius={"50px"}
       >
         <div className='square-separator'>
