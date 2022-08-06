@@ -19,29 +19,24 @@ const techStack = [
 export default function Skills() {
   const carroussel = useRef(null);
   const [isMobile] = useMediaQuery("(max-width: 770px)");
+
   const imgWidth = isMobile ? 120 : 180;
 
-
   useEffect(() => {
-    const { current } = carroussel;
-    const dom = {};
-    dom.el = current.querySelector(".placeholders");
-    dom.images = current.querySelectorAll(".placeholders__image");
-    dom.button = current.querySelector("button");
-    const tl = gsap.timeline({ paused: true });
+    const { current: ele } = carroussel;
+    console.log(ele.scrollLeft);
+    let pos = { top: 0, left: 0, x: 0, y: 0 };
+    ele.addEventListener('mousemove', (e) => {
+      const dx = e.clientX - pos.x;
+      console.log(dx);
 
-    const handler = (entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          tl.play();
-        }
-      });
-    };
+    });
+    ele.addEventListener('mouseup', (e) => {
+      const dx = e.clientX - pos.x;
+      console.log(dx);
 
-    //let observer = new IntersectionObserver(handler);
 
-    //observer.observe(dom.el);
-
+    });
 
   }, []);
 
@@ -71,31 +66,39 @@ export default function Skills() {
             Checkout a list of technologies he usually works with:
           </Text>
         </Box>
-      </Box>
-
-
-      <Box ref={carroussel} mt={"40px"} w={"100%"} h={isMobile ? "150px" : "200px"} overflow="scroll" px={isMobile ? "0px" : "4.5vw"}>
-        <div className='placeholders'
-          style={{ display: "flex", gap: "40px", width: "max-content" }}
+        <div className="scroll"
+          ref={carroussel}
+          style={{
+            maxWidth: "88vw",
+            overflow: "scroll",
+            cursor: "grab",
+            background: "white",
+            boxShadow: "rgb(73 73 73 / 28%) 0px 15px 30px",
+            marginTop: "20px",
+            borderRadius: "20px 20px 3px 3px"
+          }}
         >
-          {techStack.map(({ image, name, years }) => (
-            <div key={name} className='placeholders__image' style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              width: imgWidth,
-              height: imgWidth,
-              background: "white",
-              padding: "10px",
-              boxShadow: "rgb(73 73 73 / 15%) 0px 15px 30px",
-              borderRadius: "10px"
-            }}>
-              <img width={imgWidth} height={imgWidth} src={image} alt="" />
-            </div>
-          ))}
+          <div className="scroll__wrapper" style={{ display: "flex", width: "100%", alignItems: "center", height: isMobile ? "150px" : "210px" }}>
+            {techStack.map(({ image, name, years }) => (
+              <div key={name} className='placeholders__image' style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: imgWidth,
+                height: imgWidth,
+                background: "white",
+                padding: "10px",
+                //boxShadow: "rgb(73 73 73 / 15%) 0px 15px 30px",
+                borderRadius: "10px",
+                flexShrink: 0,
+                marginRight: "14px"
+              }}>
+                <img width={imgWidth} height={imgWidth} src={image} alt="" />
+              </div>
+            ))}
+          </div>
         </div>
-      </Box >
-
+      </Box>
     </Flex >
   );
 }
