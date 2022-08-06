@@ -24,20 +24,40 @@ export default function Skills() {
 
   useEffect(() => {
     const { current: ele } = carroussel;
-    console.log(ele.scrollLeft);
     let pos = { top: 0, left: 0, x: 0, y: 0 };
-    ele.addEventListener('mousemove', (e) => {
+
+    const mouseDownHandler = function (e) {
+      ele.style.cursor = 'grabbing';
+      ele.style.userSelect = 'none';
+
+      pos = {
+        left: ele.scrollLeft,
+        top: ele.scrollTop,
+        x: e.clientX,
+        y: e.clientY,
+      };
+
+      ele.addEventListener('mousemove', mouseMoveHandler);
+      ele.addEventListener('mouseup', mouseUpHandler);
+    };
+
+    const mouseMoveHandler = function (e) {
       const dx = e.clientX - pos.x;
-      console.log(dx);
+      const dy = e.clientY - pos.y;
 
-    });
-    ele.addEventListener('mouseup', (e) => {
-      const dx = e.clientX - pos.x;
-      console.log(dx);
+      ele.scrollTop = pos.top - dy;
+      ele.scrollLeft = pos.left - dx;
+    };
 
+    const mouseUpHandler = function () {
+      ele.style.cursor = 'grab';
+      ele.style.removeProperty('user-select');
 
-    });
+      ele.removeEventListener('mousemove', mouseMoveHandler);
+      ele.removeEventListener('mouseup', mouseUpHandler);
+    };
 
+    ele.addEventListener('mousedown', mouseDownHandler);
   }, []);
 
   return (
@@ -78,21 +98,26 @@ export default function Skills() {
             borderRadius: "20px 20px 3px 3px"
           }}
         >
-          <div className="scroll__wrapper" style={{ display: "flex", width: "100%", alignItems: "center", height: isMobile ? "150px" : "210px" }}>
+          <div className="scroll__wrapper" draggable="false" onDragStart={(e) => { e.preventDefault(); }} style={{ display: "flex", width: "100%", alignItems: "center", height: isMobile ? "150px" : "210px" }}>
             {techStack.map(({ image, name, years }) => (
-              <div key={name} className='placeholders__image' style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: imgWidth,
-                height: imgWidth,
-                background: "white",
-                padding: "10px",
-                //boxShadow: "rgb(73 73 73 / 15%) 0px 15px 30px",
-                borderRadius: "10px",
-                flexShrink: 0,
-                marginRight: "14px"
-              }}>
+              <div
+                key={name}
+                className='placeholders__image'
+                onMouseOver={() => { console.log(name); }}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: imgWidth,
+                  height: imgWidth,
+                  background: "white",
+                  padding: "10px",
+                  borderRadius: "10px",
+                  flexShrink: 0,
+                  marginRight: "14px",
+                  useDrag: "none",
+                  userSelect: "none"
+                }}>
                 <img width={imgWidth} height={imgWidth} src={image} alt="" />
               </div>
             ))}

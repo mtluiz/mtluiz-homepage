@@ -84,7 +84,7 @@ box-sizing: border-box;
 	padding: 0.5rem 3rem;
 	margin: 0;
 	font-family: inherit;
-	font-size: inherit;
+	font-size: 15px;
 	position: relative;
 	display: inline-block;
   margin-top: 16px
