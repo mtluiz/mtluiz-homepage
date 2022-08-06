@@ -68,6 +68,7 @@ export default function Skills() {
       justifyContent="center"
       alignItems={"center"}
       position={"relative"}
+      id="skills"
     >
       <Box h={"100%"} w={"100%"} px={"4.5vw"}>
         <Box>

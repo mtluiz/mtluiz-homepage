@@ -44,7 +44,7 @@ export default function HomeSection() {
       >
         <Box display={isMobile ? "none" : "flex"} flexDir={"column"} alignItems={"flex-start"} justifyContent={"flex-end"}>
           <Heading>DISCOVER MATHEUS</Heading>
-          <button className="button button--anthe"><span>Explore Skills</span></button>
+          <a href="#skills"><button className="button button--anthe"><span>Explore Skills</span></button></a>
         </Box>
 
         <Blob />
@@ -64,7 +64,7 @@ export default function HomeSection() {
             He&apos;s always looking for new works
             and projects to improve his dev skills.
           </Text>
-          <button className="button button--anthe"><span>Explore Portfolio</span></button>
+          <a href="#portfolio"><button className="button button--anthe"><span>Explore Portfolio</span></button></a>
         </Box>
       </Flex>
     </Flex >

@@ -53,6 +53,7 @@ export default function Portfolio() {
         my={"6vw"}
         mx={isMobile ? "10px" : "8vw"}
         borderRadius={"50px"}
+        id="portfolio"
       >
         <div className='square-separator'>
           <div className='square'></div>

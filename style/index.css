@@ -6,6 +6,10 @@
   src: url('/fonts/thunder.ttf');
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   -webkit-font-smoothing: antialised;
   text-rendering: geometricPrecision;
