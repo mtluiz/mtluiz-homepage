@@ -11,7 +11,7 @@ export default function HomeSection() {
     <Flex
       flexDir={"column"}
       justifyContent={isMobile ? "" : "space-between"}
-      maxH="100vh"
+      minH="100vh"
       position="relative"
     >
       <Box>
