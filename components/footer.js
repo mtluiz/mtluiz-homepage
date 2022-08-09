@@ -19,14 +19,14 @@ export default function Footer() {
         <Text
           fontSize="sm"
           w="100%"
-          fontWeight={isMobile ? "bolder" : ""}
+          fontWeight={"bolder"}
           textAlign={"center"}
           my={10}
         >
           THE CONNECTIONS WE BUILD <br></br> MAKE US WHO WE ARE
         </Text>
         <Heading
-          fontSize={isMobile ? "18vw" : "14vw"}
+          fontSize={isMobile ? "18vw" : "10vw"}
           w="100%"
           textAlign={"center"}
         >
