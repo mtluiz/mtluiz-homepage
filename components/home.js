@@ -11,7 +11,7 @@ export default function HomeSection() {
     <Flex
       flexDir={"column"}
       justifyContent={isMobile ? "" : "space-between"}
-      minH="100vh"
+      h="100vh"
       position="relative"
     >
       <Box>
@@ -25,12 +25,12 @@ export default function HomeSection() {
           {!isMobile && <Text fontSize="xs">Web developer based in Brazil.</Text>}
         </Flex>
         <Heading
-          fontSize={isMobile ? "22vw" : "14vw"}
+          fontSize={isMobile ? "22vw" : "13vw"}
           className={"home__title"}
           whiteSpace={isMobile ? "wrap" : "nowrap"}
           w="100%"
           textAlign="center"
-          lineHeight={isMobile ? "17vw" : "auto"}
+          lineHeight={isMobile ? "17vw" : "6rem"}
         >
           FULL STACK DEVELOPER
         </Heading>
