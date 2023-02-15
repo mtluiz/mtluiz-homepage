@@ -19,6 +19,13 @@ export default function Head() {
         <meta property="twitter:title" content="Matheus Luiz - Full Stack Developer" />
         <meta property="twitter:description" content="Matheus is a full stack developer and javascript enthusiast based in Brazil." />
         <meta property="twitter:image" content="https://www.mtluiz.dev/images/logo-png.png" />
+        <link
+        rel="preload"
+        href="/fonts/thunder.ttf"
+        as="font"
+        crossOrigin=""
+        type="font/ttf"
+      />
       </H>
     </>
   );

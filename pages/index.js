@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import Portfolio from "../components/portfolio";
 import Skills from "../components/skills";
 import Head from "../components/head";
+import Loader from "../components/loader";
 import { useMediaQuery } from "@chakra-ui/react";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Head />
+      <Loader />
       <main style={{ display: isMobile ? "block" : "flex", justifyContent: isTablet ? "" : "center", alignItems: "center" }}>
         <div style={{ maxWidth: "1400px" }}>
           <Setup />

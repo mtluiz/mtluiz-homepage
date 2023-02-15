@@ -60,7 +60,7 @@ export default function Portfolio() {
           <div className="dotted"></div>
         </div>
         <Heading fontSize={"5xl"} >MY PORTFOLIO</Heading>
-        <Text fontSize={isMobile ? "2xl" : "3xl"} textAlign="center" my={10} maxW="400px">
+        <Text fontSize={isMobile ? "2xl" : "2xl"} textAlign="center" my={10} maxW="400px">
           <Highlight query='Globo' styles={{ px: '1', py: '1', bg: '#2FDAF1' }}>
             Currently he works for the biggest media company in Brazil, Globo.
             He also does some freelance work on his free time.

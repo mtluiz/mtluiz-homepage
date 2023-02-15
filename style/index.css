@@ -29,7 +29,7 @@ box-sizing: border-box;
 
 .noise {
   position: fixed;
-  z-index: 9999;
+  z-index: 9998;
   top: -300%;
   left: -150%;
   height: 600%;
@@ -38,7 +38,7 @@ box-sizing: border-box;
   background-image: url(https://itssharl.ee/noise.png);
   background-size: 200px;
   background-repeat: repeat;
-  opacity: 0.4;
+  opacity: 0.2;
   pointer-events: none;
 }
 
