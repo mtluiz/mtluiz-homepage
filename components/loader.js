@@ -9,8 +9,8 @@ export default function Loader({ isLoaded }) {
       const loader = document.getElementById('loader');
       if (loader) {
          gsap.timeline({ paused: false })
-          .to(loader, { top: 0, duration: 1.0 })
-          .to(loader, { top: -1000, duration: 1.0 }, 2)
+          .to(loader, { top: 0, duration: 0.5 })
+          .to(loader, { top: -1000, duration: 0.5 }, 2)
           .to(loader, {display: "none"} )
           ;
       }
@@ -28,7 +28,7 @@ export default function Loader({ isLoaded }) {
       alignItems={"center"}
       transition="opacity 5s"
       id='loader'
-      position="absolute"
+      position="fixed"
     >
       <div className='square-separator'>
         <div className='square'></div>

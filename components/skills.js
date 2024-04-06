@@ -5,6 +5,8 @@ import gsap from 'gsap';
 
 const techStack = [
   { image: "./images/tech/javascript.svg", name: "js", years: 1 },
+  { image: "./images/tech/python.svg", name: "python", years: 4},
+  { image: "./images/tech/go.svg", name: "python", years: 4},
   { image: "./images/tech/react.svg", name: "react", years: 1 },
   { image: "./images/tech/nodejs.svg", name: "node", years: 1 },
   { image: "./images/tech/nestjs.svg", name: "nest", years: 1 },
@@ -104,7 +106,6 @@ export default function Skills() {
               <div
                 key={name}
                 className='placeholders__image'
-                onMouseOver={() => { console.log(name); }}
                 style={{
                   display: "flex",
                   justifyContent: "center",

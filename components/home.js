@@ -59,7 +59,7 @@ export default function HomeSection() {
             maxWidth="300px"
             textAlign={isMobile ? "center" : ""}
           >
-            Matheus is a &quot;full stack&quot; developer, javascript enthusiast
+            <strong>Matheus</strong> is a <strong>full-stack developer</strong> with 4 years of experience, javascript enthusiast
             and web developer based in Rio de Janeiro, Brazil.
             He&apos;s always looking for new works
             and projects to improve his dev skills.
