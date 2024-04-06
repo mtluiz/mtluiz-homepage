@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import HomeSection from "../components/home";
 import Setup from "../components/setup";
 import Footer from "../components/footer";
@@ -7,7 +8,7 @@ import Header from "../components/head";
 import Head from "next/head";
 import Loader from "../components/loader";
 import { useMediaQuery } from "@chakra-ui/react";
-import { GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 
 export default function Home() {
 
@@ -16,17 +17,16 @@ export default function Home() {
 
   return (
     <>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-5VXWWK9V5B"></Script>
       <Head>
-        <GoogleAnalytics gaId="G-5VXWWK9V5B" />
         <script dangerouslySetInnerHTML={{
           __html: `
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-  gtag('config', 'G-5VXWWK9V5B');`
+            gtag('config', 'G-5VXWWK9V5B');`
         }}>
-
         </script>
       </Head>
       <Header />

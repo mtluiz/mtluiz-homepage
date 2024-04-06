@@ -6,7 +6,7 @@ import gsap from 'gsap';
 const techStack = [
   { image: "./images/tech/javascript.svg", name: "js", years: 1 },
   { image: "./images/tech/python.svg", name: "python", years: 4},
-  { image: "./images/tech/go.svg", name: "python", years: 4},
+  { image: "./images/tech/go.svg", name: "go", years: 4},
   { image: "./images/tech/react.svg", name: "react", years: 1 },
   { image: "./images/tech/nodejs.svg", name: "node", years: 1 },
   { image: "./images/tech/nestjs.svg", name: "nest", years: 1 },
@@ -65,7 +65,7 @@ export default function Skills() {
   return (
     <Flex
       minH={"auto"}
-      py={isMobile ? "12vh" : "20vh"}
+      py={isMobile ? "12vh" : "15vh"}
       flexDir={"column"}
       justifyContent="center"
       alignItems={"center"}

@@ -33,11 +33,11 @@ export default function Footer() {
           LET&apos;S CONNECT
         </Heading>
         <Flex justifyContent={"center"}>
-          <a href="mailto:matheusluizn@outlook.com" target="_blank" rel="noreferrer">
+          <a href="https://www.linkedin.com/in/matheusluizn/" target="_blank" rel="noreferrer">
             <button
               className="button button--anthe"
             >
-              <span>Send me an email</span>
+              <span>Talk to me on Linkedin</span>
             </button>
           </a>
         </Flex>
